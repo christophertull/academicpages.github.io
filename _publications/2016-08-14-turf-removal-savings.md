@@ -1,7 +1,7 @@
 ---
 title: "How Much Water Does Turf Removal Save? Applying Bayesian Structural Time-Series to California Residential Water Demand"
 collection: publications
-permalink: /publication/2016-08-21-turf-removal-savings
+permalink: /publication/2016-08-14-turf-removal-savings
 excerpt: "Monthly water savings from turf removal are estimated at the household level as the difference between actual usage and a synthetic control and then aggregated using a mixed-effects regression model to investigate the determinants of water savings."
 date: 2016-08-14
 venue: 'KDD Workshop on Data Science for Food, Energy and Water'
