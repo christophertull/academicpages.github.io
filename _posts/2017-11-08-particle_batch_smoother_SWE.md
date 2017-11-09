@@ -6,9 +6,9 @@ tags:
   - blog
 ---
 
-Today I want to write about a paper from a couple years ago coauthored by a colleague of mine, [Dr. Gonzalo Cortés](). I have worked with Gonzalo through the [California Data Collaborative](), and I might end up working with him in the future if the funding works out, so I have started working my way through a literature review of papers that will be relevant for the project.
+Today I want to write about a paper from a couple years ago coauthored by a colleague of mine, [Dr. Gonzalo Cortés](http://www.cee.ucla.edu/profile-cortes/). I have worked with Gonzalo through the [California Data Collaborative](http://californiadatacollaborative.org/), and I might end up working with him in the future if the funding works out, so I have started working my way through a literature review of papers that will be relevant for the project.
 
-The paper for today is Margulis et al (2015) [A Particle Batch Smoother Approach to Snow Water Equivalent Estimation](). I want to begin by saying that I have ZERO background in hydrology and earth sciences, so this probably the first academic hydrology paper that I have ever read. Fortunately this is a methods paper with a data assimilation algorithm at its core, so I was reasonably in my element while reading. The whole concept of data assimilation has apparently been around for decades in earth science circles, but this was my first exposure to the technique as an urban/data scientist. I must say the approach is really quite general and I have already thought of some cool applications in the urban domain (maybe I'll write about this in the future).
+The paper for today is Margulis et al. (2015) [A Particle Batch Smoother Approach to Snow Water Equivalent Estimation](http://journals.ametsoc.org/doi/abs/10.1175/JHM-D-14-0177.1). I want to begin by saying that I have ZERO background in hydrology and earth sciences, so this probably the first academic hydrology paper that I have ever read. Fortunately this is a methods paper with a data assimilation algorithm at its core, so I was reasonably in my element while reading. The whole concept of data assimilation has apparently been around for decades in earth science circles, but this was my first exposure to the technique as an urban/data scientist. I must say the approach is really quite general and I have already thought of some cool applications in the urban domain (maybe I'll write about this in the future).
 
 Before I get too far off topic, I will get on to the contents of the paper and hopefully not butcher it too much. Please be advised that any errors are certainly my own failure to grasp the content and not indicative of the authors' work.
 
@@ -32,7 +32,7 @@ I was struck by the similarities of this method to another topic I have been stu
 
 The diagram below is my own and shows my understanding of the relationship between the different variables.
 
-If we consider how influence flows flows through a conditional probability network like this, then we can see that by observing the "bottom" node represeting fSCA, we can gain propogate that nknowledge up the graph to insight into the middle state representing SWE.
+If we consider how influence flows flows through a conditional probability network like this, then we can see that by observing the "bottom" node representing fSCA, we can gain propagate that knowledge up the graph to insight into the middle state representing SWE.
 
 ## Simplified summary
 
@@ -42,9 +42,9 @@ First, take a bunch of meteorological variables and make them stochastic by mult
 
 Then feed each realization of the joint input distribution through an Simplified Simple Biosphere Model (a.k.a. a really complicated LSM) to obtain a prior distribution of SWE.
 
-Pass this prior disribution of SWE through the measurement model to obtain a prior joint distribution of SWE and fSCA. Without getting too mathy, let's call this prior Y+.
+Pass this prior distribution of SWE through the measurement model to obtain a prior joint distribution of SWE and fSCA. Without getting too mathy, let's call this prior Y+.
 
-Use PBS to assign a weight to each replicate/realization/particle in Y+ by calculating the difference between the prior fSCA for that replicate and the OBSERVED fSCA measured using Landsat images. Each weight is derived by plugging the error term (prior - observation) into a gaussian with mean 0 and variance derived (I think) from the overall error distribution. 
+Use PBS to assign a weight to each replicate/realization/particle in Y+ by calculating the difference between the prior fSCA for that replicate and the OBSERVED fSCA measured using Landsat images. Each weight is derived by plugging the error term (prior - observation) into a Gaussian with mean 0 and variance derived (I think) from the overall error distribution. 
 
 These weights then effectively give us our desired posterior distribution of SWE.
 
