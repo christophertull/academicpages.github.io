@@ -24,7 +24,7 @@ The main components of this method are
 
 3. An update step that takes the prior estimates of SWE from the LSM and conditions them on satellite measurements of fSCA so that the posterior model estimates more closely match the observations.
 
-This update framework itself is not novel to the paper, but rather the core contribution of this paper is to use a Particle Batch Smoother (PBS) approach to conduct the update. It turns out that the PBS approach delivers radically improved estimates of SWE when compared to a previously proposed approach based on a Kalman filter.
+This update framework itself is not novel to the paper, but rather the core contribution of this paper is to use a [Particle Batch Smoother](https://en.wikipedia.org/wiki/Particle_filter) (PBS) approach to conduct the update. It turns out that the PBS approach delivers radically improved estimates of SWE when compared to a previously proposed approach based on a Kalman filter.
 
 ## Graphical representation 
 
@@ -32,7 +32,9 @@ I was struck by the similarities of this method to another topic I have been stu
 
 The diagram below is my own and shows my understanding of the relationship between the different variables.
 
-If we consider how influence flows flows through a conditional probability network like this, then we can see that by observing the "bottom" node representing fSCA, we can gain propagate that knowledge up the graph to insight into the middle state representing SWE.
+![inference diagram](/images/blog_images/2017-11-08_blog_bayesian_network.png)
+
+If we consider how influence flows through a conditional probability network like this, then we can see that by observing the "bottom" node representing fSCA, we can propagate that knowledge up the graph for insight into the middle state representing SWE.
 
 ## Simplified summary
 
@@ -54,7 +56,7 @@ The authors spend the rest of the paper validating their approach and comparing 
 
 ## Takeaways
 
-I was really excited by the paper. Probably because I am an applied mathematician at heart and I love seeing cool applications of 
+I was really excited by the paper. Probably because I am methods nerd at heart and I love seeing cool applications of data analysis techniques applied to solve scientific problems. I also enjoy diving into an entirely new field like this and poking around, trying to guage the extents and gaps of my knowledge. 
 
 
 
